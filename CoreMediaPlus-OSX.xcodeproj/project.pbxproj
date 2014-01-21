@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */; };
 		5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */; };
 		5060F4B2188DAE0F00621460 /* CMPBlockBuffer+Text.h in Headers */ = {isa = PBXBuildFile; fileRef = 5060F4AE188DAE0F00621460 /* CMPBlockBuffer+Text.h */; };
 		5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5060B6D2188F029400979779 /* CMPAtoms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPAtoms.h; sourceTree = "<group>"; };
+		5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPAtoms+Iterate.h"; sourceTree = "<group>"; };
+		5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAtoms+Iterate.c"; sourceTree = "<group>"; };
 		5060F47B188DAD6E00621460 /* libCoreMediaPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreMediaPlus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5060F481188DAD6E00621460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5060F486188DAD6E00621460 /* CoreMediaPlus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreMediaPlus-Prefix.pch"; sourceTree = "<group>"; };
@@ -73,6 +77,9 @@
 				5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */,
 				5060F4B0188DAE0F00621460 /* CMPSampleBuffer+Text.h */,
 				5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */,
+				5060B6D2188F029400979779 /* CMPAtoms.h */,
+				5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */,
+				5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */,
 			);
 			name = CoreMediaPlus;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */,
 				5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */,
 				5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */,
 			);

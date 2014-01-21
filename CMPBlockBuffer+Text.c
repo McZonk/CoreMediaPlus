@@ -1,8 +1,6 @@
 #include "CMPBlockBuffer+Text.h"
-
-static const UInt32 CMPTextTerminator = 0x0000000c;
-static const UInt32 CMPTextEncoding = FOUR_CHAR_CODE('encd');
-static const UInt32 CMPTextEncodingUTF8 = 0x00000100; // != kCFEncodingStringUTF8
+#include "CMPAtoms.h"
+#include "CMPAtoms+Iterate.h"
 
 
 OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer) {
@@ -33,23 +31,8 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 	{
 		return status;
 	}
-	
-	// text
-	*(UInt16 *)buffer = OSSwapHostToBigInt16(textLength);
-	buffer += 2;
-	
-	memcpy(buffer, textCharacters, textLength);
-	buffer += textLength;
-	
-	*(UInt32 *)buffer = OSSwapHostToBigInt32(CMPTextTerminator);
-	buffer += 4;
-	
-	// encoding
-	*(UInt32 *)buffer = OSSwapHostToBigInt32(CMPTextEncoding);
-	buffer += 4;
-	
-	*(UInt32 *)buffer = OSSwapHostToBigInt32(CMPTextEncodingUTF8);
-	buffer += 4;
+
+	// TODO: write an explicit encoding here?
 	
 	return noErr;
 }
@@ -73,37 +56,67 @@ CFStringRef CMPBlockBufferCopyText(CFAllocatorRef allocator, CMBlockBufferRef bl
 	
 	CFIndex textLength = OSSwapBigToHostInt16(*(UInt16 *)buffer);
 	buffer += 2;
+	size -= 2;
 	
 	// check if the size is big enough for all values
-	if(size < 2 + textLength + 4 + 4 + 4)
+	if(size < textLength)
 	{
 		return NULL;
 	}
-	
+		
 	const UInt8 *textCharacters = (UInt8 *)buffer;
 	buffer += textLength;
+	size -= textLength;
+		
+	CFStringEncoding textEncoding = kCFStringEncodingUTF8;
 	
-	UInt32 terminator = OSSwapBigToHostInt32(*(UInt32 *)buffer);
-	buffer += 4;
-	if(terminator != CMPTextTerminator)
+	// read appended atoms
+	if(size > 0)
 	{
-		return NULL;
+		size_t offset = 0;
+		CMPAtom *atom = NULL;
+	
+		while(CMPAtomIterate(buffer, size, &offset, &atom))
+		{
+			FourCharCode atomType = OSSwapBigToHostInt32(atom->type);
+			UInt32 atomSize = OSSwapBigToHostInt32(atom->size);
+			
+			if(atomType == CMPAtomTypeEncoding)
+			{
+				CMPEncodingAtom *encodingAtom = (CMPEncodingAtom *)atom;
+				
+				// atom does not fit
+				if(atomSize > sizeof(*encodingAtom))
+				{
+					continue;
+				}
+				
+				textEncoding = OSSwapBigToHostInt32(encodingAtom->encoding);
+			}
+		}
 	}
 	
-	UInt32 encoding = OSSwapBigToHostInt32(*(UInt32 *)buffer);
-	buffer += 4;
-	if(encoding != CMPTextEncoding)
+	// search "User Data Text Strings and Language Codes"
+	// https://developer.apple.com/library/mac/documentation/QuickTime/qtff/QTFFChap2/qtff2.html#//apple_ref/doc/uid/TP40000939-CH204-BBCCFFGD
+
+	if(textLength > 2)
 	{
-		return NULL;
+		UInt16 bom = *(UInt16 *)textCharacters;
+		if(textEncoding == kCFStringEncodingUTF8)
+		{
+			if(bom == 0xfeff || bom == 0xfffe)
+			{
+				textEncoding = kCFStringEncodingUTF16;
+			}
+		}
+		else if(textEncoding == kCFStringEncodingUTF16)
+		{
+			if(bom != 0xfeff && bom != 0xfffe)
+			{
+				textEncoding = kCFStringEncodingUTF8;
+			}
+		}
 	}
 	
-	// TODO: support different encodings
-	UInt32 encodingUTF8 = OSSwapBigToHostInt32(*(UInt32 *)buffer);
-	buffer += 4;
-	if(encodingUTF8 != CMPTextEncodingUTF8)
-	{
-		return NULL;
-	}
-	
-	return CFStringCreateWithBytes(allocator, textCharacters, textLength, kCFStringEncodingUTF8, false);
+	return CFStringCreateWithBytes(allocator, textCharacters, textLength, textEncoding, false);
 }
