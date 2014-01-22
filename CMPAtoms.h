@@ -14,3 +14,6 @@ typedef struct CMPEncodingAtom {
 	CMPAtom atom;
 	UInt32 encoding;
 } CMPEncodingAtom;
+
+
+CFStringRef CMPAtomTypeCopyStringRef(CFAllocatorRef allocator, FourCharCode type);
