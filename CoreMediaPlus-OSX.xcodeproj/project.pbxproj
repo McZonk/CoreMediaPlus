@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */; };
 		5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6DD189011BD00979779 /* CMPAtoms.c */; };
+		5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */; };
+		5060B6E41890153F00979779 /* CMPBlockBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6E31890153F00979779 /* CMPBlockBuffer+Image.c */; };
 		5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */; };
 		5060F4B2188DAE0F00621460 /* CMPBlockBuffer+Text.h in Headers */ = {isa = PBXBuildFile; fileRef = 5060F4AE188DAE0F00621460 /* CMPBlockBuffer+Text.h */; };
 		5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */; };
@@ -20,6 +22,10 @@
 		5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPAtoms+Iterate.h"; sourceTree = "<group>"; };
 		5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAtoms+Iterate.c"; sourceTree = "<group>"; };
 		5060B6DD189011BD00979779 /* CMPAtoms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMPAtoms.c; sourceTree = "<group>"; };
+		5060B6DF189014FE00979779 /* CMPSampleBuffer+Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Image.h"; sourceTree = "<group>"; };
+		5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPSampleBuffer+Image.c"; sourceTree = "<group>"; };
+		5060B6E21890153700979779 /* CMPBlockBuffer+Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPBlockBuffer+Image.h"; sourceTree = "<group>"; };
+		5060B6E31890153F00979779 /* CMPBlockBuffer+Image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPBlockBuffer+Image.c"; sourceTree = "<group>"; };
 		5060F47B188DAD6E00621460 /* libCoreMediaPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreMediaPlus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5060F481188DAD6E00621460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5060F486188DAD6E00621460 /* CoreMediaPlus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreMediaPlus-Prefix.pch"; sourceTree = "<group>"; };
@@ -74,15 +80,19 @@
 			isa = PBXGroup;
 			children = (
 				5060F487188DAD6E00621460 /* CoreMediaPlus.h */,
+				5060B6D2188F029400979779 /* CMPAtoms.h */,
+				5060B6DD189011BD00979779 /* CMPAtoms.c */,
+				5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */,
+				5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */,
 				5060F486188DAD6E00621460 /* CoreMediaPlus-Prefix.pch */,
 				5060F4AE188DAE0F00621460 /* CMPBlockBuffer+Text.h */,
 				5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */,
 				5060F4B0188DAE0F00621460 /* CMPSampleBuffer+Text.h */,
 				5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */,
-				5060B6D2188F029400979779 /* CMPAtoms.h */,
-				5060B6DD189011BD00979779 /* CMPAtoms.c */,
-				5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */,
-				5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */,
+				5060B6E21890153700979779 /* CMPBlockBuffer+Image.h */,
+				5060B6E31890153F00979779 /* CMPBlockBuffer+Image.c */,
+				5060B6DF189014FE00979779 /* CMPSampleBuffer+Image.h */,
+				5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */,
 			);
 			name = CoreMediaPlus;
 			sourceTree = "<group>";
@@ -170,8 +180,10 @@
 			files = (
 				5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */,
 				5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */,
+				5060B6E41890153F00979779 /* CMPBlockBuffer+Image.c in Sources */,
 				5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */,
 				5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */,
+				5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

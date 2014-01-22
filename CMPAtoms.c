@@ -9,7 +9,7 @@ CFStringRef CMPAtomTypeCopyStringRef(CFAllocatorRef allocator, FourCharCode type
 	
 	if(isprint(characters[0]) && isprint(characters[1]) && isprint(characters[2]) && isprint(characters[3]))
 	{
-		return CFStringCreateWithBytes(allocator, (UInt8 *)characters, 4, kCFStringEncodingASCII, false);
+		return CFStringCreateWithBytes(allocator, characters, 4, kCFStringEncodingASCII, false);
 	}
 	else
 	{

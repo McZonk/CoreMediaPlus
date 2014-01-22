@@ -1,6 +1,8 @@
 #include "CMPSampleBuffer+Text.h"
 
+#include "CMPAtoms.h"
 #include "CMPBlockBuffer+Text.h"
+
 
 OSStatus CMPSampleBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, Boolean dataReady, CMSampleBufferMakeDataReadyCallback makeDataReadyCallback, void *makeDataReadyRefcon, CMFormatDescriptionRef formatDescription, const CMSampleTimingInfo *sampleTiming, CMSampleBufferRef *outSampleBuffer)
 {
@@ -41,7 +43,7 @@ CFStringRef CMPSampleBufferCopyText(CFAllocatorRef allocator, CMSampleBufferRef 
 	}
 	
 	FourCharCode mediaSubType = CMFormatDescriptionGetMediaSubType(formatDescription);
-	if(mediaSubType != 'text' && mediaSubType != 'tx3g')
+	if(mediaSubType != CMPAtomTypeText && mediaSubType != CMPAtomTypeText3G)
 	{
 		return NULL;
 	}
