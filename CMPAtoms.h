@@ -2,13 +2,15 @@
 
 #include <CoreMedia/CoreMedia.h>
 
+// kCMTextFormatType_QTText
+
+static const FourCharCode kCMPTextEncoding = 'encd';
+
 static const FourCharCode CMPAtomTypeEncoding = 'encd';
 
-static const FourCharCode CMPAtomTypeText = 'text';
-static const FourCharCode CMPAtomTypeText3G = 'tx3g';
 
-static const FourCharCode CMPAtomTypeJpeg = 'jpeg';
-static const FourCharCode CMPAtomTypePng = 'png ';
+static const FourCharCode kCMPImageTypeJpeg = 'jpeg';
+static const FourCharCode kCMPImageTypePng = 'png ';
 
 
 typedef struct CMPAtom {

@@ -43,7 +43,7 @@ CFStringRef CMPSampleBufferCopyText(CFAllocatorRef allocator, CMSampleBufferRef 
 	}
 	
 	FourCharCode mediaSubType = CMFormatDescriptionGetMediaSubType(formatDescription);
-	if(mediaSubType != CMPAtomTypeText && mediaSubType != CMPAtomTypeText3G)
+	if(mediaSubType != kCMTextFormatType_QTText && mediaSubType != kCMTextFormatType_3GText)
 	{
 		return NULL;
 	}

@@ -31,12 +31,12 @@ CGImageRef CMPSampleBufferCopyImage(CFAllocatorRef allocator, CMSampleBufferRef 
 
 	FourCharCode mediaSubType = CMFormatDescriptionGetMediaSubType(formatDescription);
 
-	if(mediaSubType == CMPAtomTypeJpeg)
+	if(mediaSubType == kCMPImageTypeJpeg)
 	{
 		return CMPBlockBufferCopyJPEGImage(allocator, blockBuffer);
 	}
 	
-	if(mediaSubType == CMPAtomTypePng)
+	if(mediaSubType == kCMPImageTypePng)
 	{
 		return CMPBlockBufferCopyPNGImage(allocator, blockBuffer);
 	}
