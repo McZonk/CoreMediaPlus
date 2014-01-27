@@ -4,20 +4,50 @@
 
 
 OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer) {
-	CFIndex textLength = CFStringGetLength(text);
-	
-	if(textLength > 65535)
+	CFIndex textLengthUTF16 = CFStringGetLength(text);
+	if(textLengthUTF16 > 65535)
 	{
+		// text is too long in utf16
 		return paramErr;
 	}
-	
+
 	const char *textCharacters = CFStringGetCStringPtr(text, kCFStringEncodingUTF8);
+	Boolean textCharactersNeedsFree = false;
+	CFIndex textLengthUTF8 = textLengthUTF16;
+	
 	if(textCharacters == NULL)
 	{
-		return paramErr;
+		// if there are umlauts or other special characters CFStringGetCStringPtr returns NULL
+		
+		CFRange range = CFRangeMake(0, textLengthUTF16);
+		
+		CFIndex length = CFStringGetBytes(text, range, kCFStringEncodingUTF8, 0, false, NULL, 0, &textLengthUTF8);
+		if(length != textLengthUTF16)
+		{
+			// unable to encode the string
+			return paramErr;
+		}
+		
+		if(textLengthUTF8 > USHRT_MAX)
+		{
+			// text is too long in utf8
+			return paramErr;
+		}
+		
+		// allocate one byte more than needed to append \0 for debugging
+		textCharacters = calloc(textLengthUTF8 + 1, 1);
+		textCharactersNeedsFree = true;
+
+		length = CFStringGetBytes(text, CFRangeMake(0, textLengthUTF16), kCFStringEncodingUTF8, 0, false, (UInt8 *)textCharacters, textLengthUTF8 + 1, &textLengthUTF8);
+		if(length != textLengthUTF16)
+		{
+			// unable to encode the string, this should never happen
+			free((void *)textCharacters);
+			return paramErr;
+		}
 	}
 	
-	size_t bufferLength = 2 + textLength + 4 + 4 + 4;
+	size_t bufferLength = 2 + textLengthUTF8;
 	
 	OSStatus status = CMBlockBufferCreateWithMemoryBlock(allocator, NULL, bufferLength, allocator, NULL, 0, bufferLength, kCMBlockBufferAssureMemoryNowFlag, outBlockBuffer);
 	if(status != noErr)
@@ -31,8 +61,19 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 	{
 		return status;
 	}
-
-	// TODO: write an explicit encoding here?
+	
+	*(uint16_t *)buffer = OSSwapHostToBigInt16(textLengthUTF8);
+	buffer += sizeof(uint16_t);
+	
+	memcpy(buffer, textCharacters, textLengthUTF8);
+	buffer += textLengthUTF8;
+	
+	// TODO: write an explicit encoding atom here?
+	
+	if(textCharactersNeedsFree)
+	{
+		free((void *)textCharacters);
+	}
 	
 	return noErr;
 }
