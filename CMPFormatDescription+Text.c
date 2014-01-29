@@ -6,6 +6,11 @@ OSStatus CMP3GTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDesc
 	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_3GText, outFormatDescription);
 }
 
+OSStatus CMPQTTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDescriptionRef *outFormatDescription)
+{
+	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_QTText, outFormatDescription);
+}
+
 OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatType subtype, CMFormatDescriptionRef *outFormatDescription)
 {
 #if 0
@@ -174,6 +179,7 @@ OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatTy
 	CFRelease(defaultTextBox);
 	CFRelease(foregroundColor);
 	CFRelease(defaultStyle);
+	CFRelease(fontTable);
 	
 	CFRelease(number0);
 	CFRelease(number1);
