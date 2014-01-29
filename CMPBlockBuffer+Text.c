@@ -5,7 +5,7 @@
 
 OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer) {
 	CFIndex textLengthUTF16 = CFStringGetLength(text);
-	if(textLengthUTF16 > 65535)
+	if(textLengthUTF16 > USHRT_MAX)
 	{
 		// text is too long in utf16
 		return paramErr;
