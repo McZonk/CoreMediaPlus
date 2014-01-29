@@ -1,17 +1,7 @@
 #import "CMPFormatDescription+Text.h"
 
 
-OSStatus CMP3GTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDescriptionRef *outFormatDescription)
-{
-	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_3GText, outFormatDescription);
-}
-
-OSStatus CMPQTTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDescriptionRef *outFormatDescription)
-{
-	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_QTText, outFormatDescription);
-}
-
-OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatType subtype, CMFormatDescriptionRef *outFormatDescription)
+CFDictionaryRef CMPTextFormatExtensionsDictionaryCreate(CFAllocatorRef allocator)
 {
 #if 0
 	// Obj-C extensions
@@ -52,13 +42,13 @@ OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatTy
 	
 	const SInt8 value0 = 0;
 	CFNumberRef number0 = CFNumberCreate(allocator, kCFNumberSInt8Type, &value0);
-
+	
 	const SInt8 value1 = 1;
 	CFNumberRef number1 = CFNumberCreate(allocator, kCFNumberSInt8Type, &value1);
-
+	
 	const SInt8 value255 = 255;
 	CFNumberRef number255 = CFNumberCreate(allocator, kCFNumberSInt8Type, &value255);
-
+	
 	// background color
 	
 	const void *backgroundColorKeys[4] = {
@@ -170,11 +160,7 @@ OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatTy
 	};
 	
 	CFDictionaryRef extensions = CFDictionaryCreate(allocator, extensionsKeys, extensionsValues, 7, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-	
-	OSStatus status = CMFormatDescriptionCreate(allocator, kCMMediaType_Text, subtype, extensions, outFormatDescription);
-	
-	CFRelease(extensions);
-	
+
 	CFRelease(backgroundColor);
 	CFRelease(defaultTextBox);
 	CFRelease(foregroundColor);
@@ -184,6 +170,30 @@ OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatTy
 	CFRelease(number0);
 	CFRelease(number1);
 	CFRelease(number255);
+	
+	return extensions;
+}
+
+OSStatus CMP3GTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDescriptionRef *outFormatDescription)
+{
+	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_3GText, outFormatDescription);
+}
+
+OSStatus CMPQTTextFormatDescriptionCreate(CFAllocatorRef allocator, CMFormatDescriptionRef *outFormatDescription)
+{
+	return CMPTextFormatDescriptionCreate(allocator, kCMTextFormatType_QTText, outFormatDescription);
+}
+
+OSStatus CMPTextFormatDescriptionCreate(CFAllocatorRef allocator, CMTextFormatType subtype, CMFormatDescriptionRef *outFormatDescription)
+{
+	CFDictionaryRef extensions = CMPTextFormatExtensionsDictionaryCreate(allocator);
+	
+	OSStatus status = CMFormatDescriptionCreate(allocator, kCMMediaType_Text, subtype, extensions, outFormatDescription);
+	
+	if(extensions != NULL)
+	{
+		CFRelease(extensions);
+	}
 	
 	return status;
 }
