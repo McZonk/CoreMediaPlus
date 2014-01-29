@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502F9B5F1899233E00A762A1 /* CMPFormatDescription+Text.h in Headers */ = {isa = PBXBuildFile; fileRef = 502F9B5D1899233E00A762A1 /* CMPFormatDescription+Text.h */; };
+		502F9B601899233E00A762A1 /* CMPFormatDescription+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */; };
 		5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */; };
 		5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6DD189011BD00979779 /* CMPAtoms.c */; };
 		5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502F9B5D1899233E00A762A1 /* CMPFormatDescription+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPFormatDescription+Text.h"; sourceTree = "<group>"; };
+		502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPFormatDescription+Text.c"; sourceTree = "<group>"; };
 		5060B6D2188F029400979779 /* CMPAtoms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPAtoms.h; sourceTree = "<group>"; };
 		5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPAtoms+Iterate.h"; sourceTree = "<group>"; };
 		5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAtoms+Iterate.c"; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				5060F486188DAD6E00621460 /* CoreMediaPlus-Prefix.pch */,
 				5060F4AE188DAE0F00621460 /* CMPBlockBuffer+Text.h */,
 				5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */,
+				502F9B5D1899233E00A762A1 /* CMPFormatDescription+Text.h */,
+				502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */,
 				5060F4B0188DAE0F00621460 /* CMPSampleBuffer+Text.h */,
 				5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */,
 				5060B6E21890153700979779 /* CMPBlockBuffer+Image.h */,
@@ -122,6 +128,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502F9B5F1899233E00A762A1 /* CMPFormatDescription+Text.h in Headers */,
 				5060F4B4188DAE0F00621460 /* CMPSampleBuffer+Text.h in Headers */,
 				5060F4B2188DAE0F00621460 /* CMPBlockBuffer+Text.h in Headers */,
 			);
@@ -181,6 +188,7 @@
 				5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */,
 				5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */,
 				5060B6E41890153F00979779 /* CMPBlockBuffer+Image.c in Sources */,
+				502F9B601899233E00A762A1 /* CMPFormatDescription+Text.c in Sources */,
 				5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */,
 				5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */,
 				5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */,
