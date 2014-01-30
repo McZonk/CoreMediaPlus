@@ -13,6 +13,6 @@ CFStringRef CMPAtomTypeCopyStringRef(CFAllocatorRef allocator, FourCharCode type
 	}
 	else
 	{
-		return CFStringCreateWithFormat(allocator, NULL, CFSTR("%08x"), type);
+		return CFStringCreateWithFormat(allocator, NULL, CFSTR("%08x"), (unsigned int)type);
 	}
 }

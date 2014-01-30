@@ -1,4 +1,7 @@
 #include "CMPBlockBuffer+Text.h"
+
+#include <MacErrors.h>
+
 #include "CMPAtoms.h"
 #include "CMPAtoms+Iterate.h"
 

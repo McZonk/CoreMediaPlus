@@ -1,5 +1,7 @@
 #include "CMPSampleBuffer+Text.h"
 
+#include <MacErrors.h>
+
 #include "CMPAtoms.h"
 #include "CMPBlockBuffer+Text.h"
 
