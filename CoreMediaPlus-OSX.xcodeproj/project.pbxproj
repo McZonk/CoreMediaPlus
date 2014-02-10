@@ -31,9 +31,6 @@
 		5060F481188DAD6E00621460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5060F486188DAD6E00621460 /* CoreMediaPlus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreMediaPlus-Prefix.pch"; sourceTree = "<group>"; };
 		5060F487188DAD6E00621460 /* CoreMediaPlus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreMediaPlus.h; sourceTree = "<group>"; };
-		5060F497188DAD6E00621460 /* CoreMediaPlusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreMediaPlusTests-Info.plist"; sourceTree = "<group>"; };
-		5060F499188DAD6E00621460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5060F49B188DAD6E00621460 /* CoreMediaPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreMediaPlusTests.m; sourceTree = "<group>"; };
 		5060F4AD188DAE0F00621460 /* CMPBlockBuffer+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPBlockBuffer+Text.c"; sourceTree = "<group>"; };
 		5060F4AE188DAE0F00621460 /* CMPBlockBuffer+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPBlockBuffer+Text.h"; sourceTree = "<group>"; };
 		5060F4AF188DAE0F00621460 /* CMPSampleBuffer+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPSampleBuffer+Text.c"; sourceTree = "<group>"; };
@@ -45,7 +42,6 @@
 			isa = PBXGroup;
 			children = (
 				5060F484188DAD6E00621460 /* CoreMediaPlus */,
-				5060F495188DAD6E00621460 /* CoreMediaPlusTests */,
 				5060F47D188DAD6E00621460 /* Frameworks */,
 				5060F47C188DAD6E00621460 /* Products */,
 			);
@@ -88,24 +84,6 @@
 				5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */,
 			);
 			name = CoreMediaPlus;
-			sourceTree = "<group>";
-		};
-		5060F495188DAD6E00621460 /* CoreMediaPlusTests */ = {
-			isa = PBXGroup;
-			children = (
-				5060F49B188DAD6E00621460 /* CoreMediaPlusTests.m */,
-				5060F496188DAD6E00621460 /* Supporting Files */,
-			);
-			path = CoreMediaPlusTests;
-			sourceTree = "<group>";
-		};
-		5060F496188DAD6E00621460 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5060F497188DAD6E00621460 /* CoreMediaPlusTests-Info.plist */,
-				5060F498188DAD6E00621460 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,17 +146,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5060F498188DAD6E00621460 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5060F499188DAD6E00621460 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5060F49D188DAD6E00621460 /* Debug */ = {
