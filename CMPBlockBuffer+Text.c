@@ -1,6 +1,8 @@
 #include "CMPBlockBuffer+Text.h"
 
+#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
 #include <MacErrors.h>
+#endif
 
 #include "CMPAtoms.h"
 #include "CMPAtoms+Iterate.h"
