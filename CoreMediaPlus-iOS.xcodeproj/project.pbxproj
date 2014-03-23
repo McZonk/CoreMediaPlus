@@ -14,6 +14,7 @@
 		500C2596189A8E4E0062DB0E /* CMPFormatDescription+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C258C189A8E4E0062DB0E /* CMPFormatDescription+Text.c */; };
 		500C2597189A8E4E0062DB0E /* CMPSampleBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C258E189A8E4E0062DB0E /* CMPSampleBuffer+Image.c */; };
 		500C2598189A8E4E0062DB0E /* CMPSampleBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */; };
+		509D918C18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		500C258F189A8E4E0062DB0E /* CMPSampleBuffer+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Image.h"; sourceTree = "<group>"; };
 		500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPSampleBuffer+Text.c"; sourceTree = "<group>"; };
 		500C2591189A8E4E0062DB0E /* CMPSampleBuffer+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Text.h"; sourceTree = "<group>"; };
+		509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAudioFormatDescription+Extradata.c"; sourceTree = "<group>"; };
+		509D918B18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPAudioFormatDescription+Extradata.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -82,6 +85,8 @@
 				500C2584189A8E4E0062DB0E /* CMPAtoms.c */,
 				500C2587189A8E4E0062DB0E /* CMPAtoms+Iterate.h */,
 				500C2586189A8E4E0062DB0E /* CMPAtoms+Iterate.c */,
+				509D918B18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.h */,
+				509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */,
 				500C2589189A8E4E0062DB0E /* CMPBlockBuffer+Image.h */,
 				500C2588189A8E4E0062DB0E /* CMPBlockBuffer+Image.c */,
 				500C258B189A8E4E0062DB0E /* CMPBlockBuffer+Text.h */,
@@ -169,6 +174,7 @@
 				500C2598189A8E4E0062DB0E /* CMPSampleBuffer+Text.c in Sources */,
 				500C2594189A8E4E0062DB0E /* CMPBlockBuffer+Image.c in Sources */,
 				500C2597189A8E4E0062DB0E /* CMPSampleBuffer+Image.c in Sources */,
+				509D918C18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c in Sources */,
 				500C2595189A8E4E0062DB0E /* CMPBlockBuffer+Text.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
