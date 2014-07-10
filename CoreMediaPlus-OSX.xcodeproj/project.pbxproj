@@ -170,7 +170,7 @@
 		5060F473188DAD6E00621460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = McZonk;
 			};
 			buildConfigurationList = 5060F476188DAD6E00621460 /* Build configuration list for PBXProject "CoreMediaPlus-OSX" */;
@@ -284,6 +284,7 @@
 		5060F4A0188DAD6E00621460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreMediaPlus-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +294,7 @@
 		5060F4A1188DAD6E00621460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreMediaPlus-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
