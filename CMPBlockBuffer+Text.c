@@ -58,6 +58,10 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 	OSStatus status = CMBlockBufferCreateWithMemoryBlock(allocator, NULL, bufferLength, allocator, NULL, 0, bufferLength, kCMBlockBufferAssureMemoryNowFlag, outBlockBuffer);
 	if(status != noErr)
 	{
+		if(textCharactersNeedsFree)
+		{
+			free((void *)textCharacters);
+		}
 		return status;
 	}
 	
@@ -65,6 +69,10 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 	status = CMBlockBufferGetDataPointer(*outBlockBuffer, 0, NULL, NULL, &buffer);
 	if(status != noErr)
 	{
+		if(textCharactersNeedsFree)
+		{
+			free((void *)textCharacters);
+		}
 		return status;
 	}
 	
