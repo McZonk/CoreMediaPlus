@@ -14,6 +14,7 @@
 		500C2596189A8E4E0062DB0E /* CMPFormatDescription+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C258C189A8E4E0062DB0E /* CMPFormatDescription+Text.c */; };
 		500C2597189A8E4E0062DB0E /* CMPSampleBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C258E189A8E4E0062DB0E /* CMPSampleBuffer+Image.c */; };
 		500C2598189A8E4E0062DB0E /* CMPSampleBuffer+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */; };
+		503BBD4919E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 503BBD4719E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c */; };
 		509D918C18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */; };
 /* End PBXBuildFile section */
 
@@ -24,9 +25,6 @@
 		500C2561189A8D870062DB0E /* CoreMediaPlus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreMediaPlus.h; sourceTree = "<group>"; };
 		500C256A189A8D870062DB0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		500C256D189A8D870062DB0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		500C2574189A8D870062DB0E /* CoreMediaPlusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreMediaPlusTests-Info.plist"; sourceTree = "<group>"; };
-		500C2576189A8D870062DB0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		500C2578189A8D870062DB0E /* CoreMediaPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreMediaPlusTests.m; sourceTree = "<group>"; };
 		500C2582189A8E230062DB0E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		500C2584189A8E4E0062DB0E /* CMPAtoms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMPAtoms.c; sourceTree = "<group>"; };
 		500C2585189A8E4E0062DB0E /* CMPAtoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPAtoms.h; sourceTree = "<group>"; };
@@ -42,6 +40,9 @@
 		500C258F189A8E4E0062DB0E /* CMPSampleBuffer+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Image.h"; sourceTree = "<group>"; };
 		500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPSampleBuffer+Text.c"; sourceTree = "<group>"; };
 		500C2591189A8E4E0062DB0E /* CMPSampleBuffer+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Text.h"; sourceTree = "<group>"; };
+		503BBD4719E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMVideoFormatDescription+CMPExtradata.c"; sourceTree = "<group>"; };
+		503BBD4819E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMVideoFormatDescription+CMPExtradata.h"; sourceTree = "<group>"; };
+		503BBD7C19E281E4002219B6 /* MacErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacErrors.h; sourceTree = "<group>"; };
 		509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAudioFormatDescription+Extradata.c"; sourceTree = "<group>"; };
 		509D918B18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPAudioFormatDescription+Extradata.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				500C255E189A8D870062DB0E /* CoreMediaPlus */,
-				500C2572189A8D870062DB0E /* CoreMediaPlusTests */,
 				500C255B189A8D870062DB0E /* Frameworks */,
 				500C255A189A8D870062DB0E /* Products */,
 			);
@@ -97,27 +97,12 @@
 				500C258E189A8E4E0062DB0E /* CMPSampleBuffer+Image.c */,
 				500C2591189A8E4E0062DB0E /* CMPSampleBuffer+Text.h */,
 				500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */,
+				503BBD4819E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.h */,
+				503BBD4719E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c */,
+				503BBD7C19E281E4002219B6 /* MacErrors.h */,
 			);
 			name = CoreMediaPlus;
 			sourceTree = SOURCE_ROOT;
-		};
-		500C2572189A8D870062DB0E /* CoreMediaPlusTests */ = {
-			isa = PBXGroup;
-			children = (
-				500C2578189A8D870062DB0E /* CoreMediaPlusTests.m */,
-				500C2573189A8D870062DB0E /* Supporting Files */,
-			);
-			path = CoreMediaPlusTests;
-			sourceTree = "<group>";
-		};
-		500C2573189A8D870062DB0E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				500C2574189A8D870062DB0E /* CoreMediaPlusTests-Info.plist */,
-				500C2575189A8D870062DB0E /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -143,7 +128,7 @@
 		500C2551189A8D870062DB0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = McZonk;
 			};
 			buildConfigurationList = 500C2554189A8D870062DB0E /* Build configuration list for PBXProject "CoreMediaPlus-iOS" */;
@@ -176,28 +161,17 @@
 				500C2597189A8E4E0062DB0E /* CMPSampleBuffer+Image.c in Sources */,
 				509D918C18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c in Sources */,
 				500C2595189A8E4E0062DB0E /* CMPBlockBuffer+Text.c in Sources */,
+				503BBD4919E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		500C2575189A8D870062DB0E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				500C2576189A8D870062DB0E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		500C257A189A8D870062DB0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -226,6 +200,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -235,7 +210,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

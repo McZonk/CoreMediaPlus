@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		502F9B601899233E00A762A1 /* CMPFormatDescription+Text.c in Sources */ = {isa = PBXBuildFile; fileRef = 502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */; };
+		503BBD3C19E264F0002219B6 /* CMAudioFormatDescription+CMPExtradata.m in Sources */ = {isa = PBXBuildFile; fileRef = 503BBD3B19E264F0002219B6 /* CMAudioFormatDescription+CMPExtradata.m */; };
+		503BBD3D19E264F0002219B6 /* libCoreMediaPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5060F47B188DAD6E00621460 /* libCoreMediaPlus.a */; };
+		503BBD4419E26738002219B6 /* Baby.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 503BBD4319E26738002219B6 /* Baby.m4a */; };
+		503BBD4619E26BD6002219B6 /* Baby.wav in Resources */ = {isa = PBXBuildFile; fileRef = 503BBD4519E26BD6002219B6 /* Baby.wav */; };
 		5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */; };
 		5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6DD189011BD00979779 /* CMPAtoms.c */; };
 		5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */ = {isa = PBXBuildFile; fileRef = 5060B6E01890152900979779 /* CMPSampleBuffer+Image.c */; };
@@ -17,12 +21,27 @@
 		509D918618DF5EA600FC9A7A /* CMAudioFormatDescription+CMPExtradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D918418DF5EA600FC9A7A /* CMAudioFormatDescription+CMPExtradata.c */; };
 		509D923118DFF79B00FC9A7A /* CMSampleBuffer+CMPDependsOnOthers.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923018DFF79B00FC9A7A /* CMSampleBuffer+CMPDependsOnOthers.c */; };
 		509D923718E0093D00FC9A7A /* CMBlockBuffer+CMPData.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923618E0093D00FC9A7A /* CMBlockBuffer+CMPData.c */; };
-		509D924018E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.m */; };
+		509D924018E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		503BBD3E19E264F0002219B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5060F473188DAD6E00621460 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5060F47A188DAD6E00621460;
+			remoteInfo = CoreMediaPlus;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		502F9B5D1899233E00A762A1 /* CMPFormatDescription+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPFormatDescription+Text.h"; sourceTree = "<group>"; };
 		502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPFormatDescription+Text.c"; sourceTree = "<group>"; };
+		503BBD3719E264F0002219B6 /* CoreMediaPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMediaPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		503BBD3A19E264F0002219B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		503BBD3B19E264F0002219B6 /* CMAudioFormatDescription+CMPExtradata.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CMAudioFormatDescription+CMPExtradata.m"; sourceTree = "<group>"; };
+		503BBD4319E26738002219B6 /* Baby.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baby.m4a; sourceTree = "<group>"; };
+		503BBD4519E26BD6002219B6 /* Baby.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Baby.wav; sourceTree = "<group>"; };
 		5060B6D2188F029400979779 /* CMPAtoms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPAtoms.h; sourceTree = "<group>"; };
 		5060B6D5188F116800979779 /* CMPAtoms+Iterate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMPAtoms+Iterate.h"; sourceTree = "<group>"; };
 		5060B6D6188F117600979779 /* CMPAtoms+Iterate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAtoms+Iterate.c"; sourceTree = "<group>"; };
@@ -46,14 +65,37 @@
 		509D923518E0093D00FC9A7A /* CMBlockBuffer+CMPData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMBlockBuffer+CMPData.h"; sourceTree = "<group>"; };
 		509D923618E0093D00FC9A7A /* CMBlockBuffer+CMPData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMBlockBuffer+CMPData.c"; sourceTree = "<group>"; };
 		509D923E18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMVideoFormatDescription+CMPExtradata.h"; sourceTree = "<group>"; };
-		509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMVideoFormatDescription+CMPExtradata.m"; sourceTree = "<group>"; };
+		509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMVideoFormatDescription+CMPExtradata.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		503BBD3419E264F0002219B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503BBD3D19E264F0002219B6 /* libCoreMediaPlus.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		503BBD3819E264F0002219B6 /* CoreMediaPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				503BBD3B19E264F0002219B6 /* CMAudioFormatDescription+CMPExtradata.m */,
+				503BBD3A19E264F0002219B6 /* Info.plist */,
+				503BBD4319E26738002219B6 /* Baby.m4a */,
+				503BBD4519E26BD6002219B6 /* Baby.wav */,
+			);
+			path = CoreMediaPlusTests;
+			sourceTree = "<group>";
+		};
 		5060F472188DAD6E00621460 = {
 			isa = PBXGroup;
 			children = (
 				5060F484188DAD6E00621460 /* CoreMediaPlus */,
+				503BBD3819E264F0002219B6 /* CoreMediaPlusTests */,
 				5060F47D188DAD6E00621460 /* Frameworks */,
 				5060F47C188DAD6E00621460 /* Products */,
 			);
@@ -63,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5060F47B188DAD6E00621460 /* libCoreMediaPlus.a */,
+				503BBD3719E264F0002219B6 /* CoreMediaPlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				509D923E18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.h */,
-				509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.m */,
+				509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c */,
 			);
 			name = CMPVideoFormatDescription;
 			sourceTree = "<group>";
@@ -149,6 +192,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		503BBD3619E264F0002219B6 /* CoreMediaPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 503BBD4219E264F0002219B6 /* Build configuration list for PBXNativeTarget "CoreMediaPlusTests" */;
+			buildPhases = (
+				503BBD3319E264F0002219B6 /* Sources */,
+				503BBD3419E264F0002219B6 /* Frameworks */,
+				503BBD3519E264F0002219B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				503BBD3F19E264F0002219B6 /* PBXTargetDependency */,
+			);
+			name = CoreMediaPlusTests;
+			productName = CoreMediaPlusTests;
+			productReference = 503BBD3719E264F0002219B6 /* CoreMediaPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5060F47A188DAD6E00621460 /* CoreMediaPlus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5060F49F188DAD6E00621460 /* Build configuration list for PBXNativeTarget "CoreMediaPlus" */;
@@ -170,8 +231,13 @@
 		5060F473188DAD6E00621460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = McZonk;
+				TargetAttributes = {
+					503BBD3619E264F0002219B6 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
 			};
 			buildConfigurationList = 5060F476188DAD6E00621460 /* Build configuration list for PBXProject "CoreMediaPlus-OSX" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -186,18 +252,39 @@
 			projectRoot = "";
 			targets = (
 				5060F47A188DAD6E00621460 /* CoreMediaPlus */,
+				503BBD3619E264F0002219B6 /* CoreMediaPlusTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		503BBD3519E264F0002219B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503BBD4619E26BD6002219B6 /* Baby.wav in Resources */,
+				503BBD4419E26738002219B6 /* Baby.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		503BBD3319E264F0002219B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503BBD3C19E264F0002219B6 /* CMAudioFormatDescription+CMPExtradata.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5060F477188DAD6E00621460 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				509D923718E0093D00FC9A7A /* CMBlockBuffer+CMPData.c in Sources */,
 				509D918618DF5EA600FC9A7A /* CMAudioFormatDescription+CMPExtradata.c in Sources */,
-				509D924018E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.m in Sources */,
+				509D924018E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c in Sources */,
 				5060B6D7188F117600979779 /* CMPAtoms+Iterate.c in Sources */,
 				5060F4B1188DAE0F00621460 /* CMPBlockBuffer+Text.c in Sources */,
 				5060B6E41890153F00979779 /* CMPBlockBuffer+Image.c in Sources */,
@@ -211,12 +298,66 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		503BBD3F19E264F0002219B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5060F47A188DAD6E00621460 /* CoreMediaPlus */;
+			targetProxy = 503BBD3E19E264F0002219B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		503BBD4019E264F0002219B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoreMediaPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		503BBD4119E264F0002219B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoreMediaPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		5060F49D188DAD6E00621460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -244,6 +385,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -253,7 +395,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -284,6 +425,7 @@
 		5060F4A0188DAD6E00621460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreMediaPlus-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +435,7 @@
 		5060F4A1188DAD6E00621460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreMediaPlus-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +445,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		503BBD4219E264F0002219B6 /* Build configuration list for PBXNativeTarget "CoreMediaPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503BBD4019E264F0002219B6 /* Debug */,
+				503BBD4119E264F0002219B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5060F476188DAD6E00621460 /* Build configuration list for PBXProject "CoreMediaPlus-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

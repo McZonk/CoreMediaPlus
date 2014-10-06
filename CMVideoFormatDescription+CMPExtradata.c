@@ -1,5 +1,11 @@
 #include "CMVideoFormatDescription+CMPExtradata.h"
 
+#include <TargetConditionals.h>
+#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
+#include "MacErrors.h"
+#endif
+
+
 OSStatus CMPVideoFormatDescriptionCopyExtradata(CFAllocatorRef allocator, CMVideoFormatDescriptionRef formatDescription, CFDataRef *outExtradata)
 {
 	const FourCharCode mediaSubType = CMFormatDescriptionGetMediaSubType(formatDescription);
