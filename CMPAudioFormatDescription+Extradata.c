@@ -1,9 +1,8 @@
 #include "CMPAudioFormatDescription+Extradata.h"
 
 #include <TargetConditionals.h>
-#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
-#include "MacErrors.h"
-#endif
+
+#include "CMPErrors.h"
 
 
 static OSStatus AudioDataGetTag(const uint8_t *data, uint32_t dataLength, uint8_t *outTagType, uint32_t *outTagHeaderLength, uint32_t *outTagDataLength)
@@ -13,7 +12,7 @@ static OSStatus AudioDataGetTag(const uint8_t *data, uint32_t dataLength, uint8_
 
 	if(dataLength < 1)
 	{
-		return paramErr;
+		return CMPParameterError;
 	}
 
 	uint8_t type = data[0];
@@ -25,7 +24,7 @@ static OSStatus AudioDataGetTag(const uint8_t *data, uint32_t dataLength, uint8_
 	{
 		if(dataLength < index + 1)
 		{
-			return paramErr;
+			return CMPParameterError;
 		}
 		
 		const uint8_t b = data[index];
@@ -79,7 +78,7 @@ static OSStatus AudioDataCopyExtradata(CFAllocatorRef allocator, const uint8_t *
 	
 	if(dataSize < skipSize)
 	{
-		return paramErr;
+		return CMPParameterError;
 	}
 	data += skipSize;
 	dataSize -= skipSize;
@@ -99,7 +98,7 @@ static OSStatus AudioDataCopyExtradata(CFAllocatorRef allocator, const uint8_t *
 		
 		if(dataSize < configSize)
 		{
-			return paramErr;
+			return CMPParameterError;
 		}
 		data += configSize;
 		dataSize -= configSize;
@@ -115,7 +114,7 @@ static OSStatus AudioDataCopyExtradata(CFAllocatorRef allocator, const uint8_t *
 		
 		if(dataSize < tagDataLength)
 		{
-			return paramErr;
+			return CMPParameterError;
 		}
 		
 		if(tag == ESDSSpecifcTag)
@@ -125,14 +124,14 @@ static OSStatus AudioDataCopyExtradata(CFAllocatorRef allocator, const uint8_t *
 		}
 	}
 	
-	return paramErr;
+	return CMPParameterError;
 }
 
 OSStatus CMPAudioFormatDescriptionCopyExtradata(CFAllocatorRef allocator, CMAudioFormatDescriptionRef audioFormatDescription, CFDataRef* outExtradata)
 {
 	if(audioFormatDescription == NULL)
 	{
-		return paramErr;
+		return CMPParameterError;
 	}
 	
 	size_t magicCookieSize = 0;

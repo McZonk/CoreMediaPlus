@@ -1,9 +1,8 @@
 #include "CMVideoFormatDescription+CMPExtradata.h"
 
 #include <TargetConditionals.h>
-#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
-#include "MacErrors.h"
-#endif
+
+#include "CMPErrors.h"
 
 
 OSStatus CMPVideoFormatDescriptionCopyExtradata(CFAllocatorRef allocator, CMVideoFormatDescriptionRef formatDescription, CFDataRef *outExtradata)
@@ -16,7 +15,7 @@ OSStatus CMPVideoFormatDescriptionCopyExtradata(CFAllocatorRef allocator, CMVide
 		CFDataRef extradata = CFDictionaryGetValue(atoms, CFSTR("avcC"));
 		if(extradata == nil)
 		{
-			return paramErr;
+			return CMPParameterError;
 		}
 		
 		*outExtradata = CFDataCreateCopy(allocator, extradata);

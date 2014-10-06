@@ -42,7 +42,7 @@
 		500C2591189A8E4E0062DB0E /* CMPSampleBuffer+Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPSampleBuffer+Text.h"; sourceTree = "<group>"; };
 		503BBD4719E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMVideoFormatDescription+CMPExtradata.c"; sourceTree = "<group>"; };
 		503BBD4819E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMVideoFormatDescription+CMPExtradata.h"; sourceTree = "<group>"; };
-		503BBD7C19E281E4002219B6 /* MacErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacErrors.h; sourceTree = "<group>"; };
+		503BBD7C19E281E4002219B6 /* CMPErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPErrors.h; sourceTree = "<group>"; };
 		509D918A18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPAudioFormatDescription+Extradata.c"; sourceTree = "<group>"; };
 		509D918B18DF636900FC9A7A /* CMPAudioFormatDescription+Extradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPAudioFormatDescription+Extradata.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +91,7 @@
 				500C2588189A8E4E0062DB0E /* CMPBlockBuffer+Image.c */,
 				500C258B189A8E4E0062DB0E /* CMPBlockBuffer+Text.h */,
 				500C258A189A8E4E0062DB0E /* CMPBlockBuffer+Text.c */,
+				503BBD7C19E281E4002219B6 /* CMPErrors.h */,
 				500C258D189A8E4E0062DB0E /* CMPFormatDescription+Text.h */,
 				500C258C189A8E4E0062DB0E /* CMPFormatDescription+Text.c */,
 				500C258F189A8E4E0062DB0E /* CMPSampleBuffer+Image.h */,
@@ -99,7 +100,6 @@
 				500C2590189A8E4E0062DB0E /* CMPSampleBuffer+Text.c */,
 				503BBD4819E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.h */,
 				503BBD4719E26DC2002219B6 /* CMVideoFormatDescription+CMPExtradata.c */,
-				503BBD7C19E281E4002219B6 /* MacErrors.h */,
 			);
 			name = CoreMediaPlus;
 			sourceTree = SOURCE_ROOT;

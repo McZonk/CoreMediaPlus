@@ -1,19 +1,17 @@
 #include "CMPSampleBuffer+Text.h"
 
 #include <TargetConditionals.h>
-#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
-#include "MacErrors.h"
-#endif
 
 #include "CMPAtoms.h"
 #include "CMPBlockBuffer+Text.h"
+#include "CMPErrors.h"
 
 
 OSStatus CMPSampleBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, Boolean dataReady, CMSampleBufferMakeDataReadyCallback makeDataReadyCallback, void *makeDataReadyRefcon, CMFormatDescriptionRef formatDescription, const CMSampleTimingInfo *sampleTiming, CMSampleBufferRef *outSampleBuffer)
 {
 	if(text == NULL)
 	{
-		return paramErr;
+		return CMPParameterError;
 	}
 	
 	CMBlockBufferRef blockBuffer = NULL;

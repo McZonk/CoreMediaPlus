@@ -1,12 +1,10 @@
 #include "CMPBlockBuffer+Text.h"
 
 #include <TargetConditionals.h>
-#if defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE > 0)
-#include "MacErrors.h"
-#endif
 
 #include "CMPAtoms.h"
 #include "CMPAtoms+Iterate.h"
+#include "CMPErrors.h"
 
 
 OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer) {
@@ -14,7 +12,7 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 	if(textLengthUTF16 > USHRT_MAX)
 	{
 		// text is too long in utf16
-		return paramErr;
+		return CMPParameterError;
 	}
 
 	const char *textCharacters = CFStringGetCStringPtr(text, kCFStringEncodingUTF8);
@@ -31,13 +29,13 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 		if(length != textLengthUTF16)
 		{
 			// unable to encode the string
-			return paramErr;
+			return CMPParameterError;
 		}
 		
 		if(textLengthUTF8 > USHRT_MAX)
 		{
 			// text is too long in utf8
-			return paramErr;
+			return CMPParameterError;
 		}
 		
 		// allocate one byte more than needed to append \0 for debugging
@@ -49,7 +47,7 @@ OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text
 		{
 			// unable to encode the string, this should never happen
 			free((void *)textCharacters);
-			return paramErr;
+			return CMPParameterError;
 		}
 	}
 	
