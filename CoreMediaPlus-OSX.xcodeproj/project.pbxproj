@@ -22,7 +22,6 @@
 		509D923118DFF79B00FC9A7A /* CMSampleBuffer+CMPDependsOnOthers.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923018DFF79B00FC9A7A /* CMSampleBuffer+CMPDependsOnOthers.c */; };
 		509D923718E0093D00FC9A7A /* CMBlockBuffer+CMPData.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923618E0093D00FC9A7A /* CMBlockBuffer+CMPData.c */; };
 		509D924018E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c in Sources */ = {isa = PBXBuildFile; fileRef = 509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c */; };
-		50D479891A01835200683297 /* CMPFormatDescription+Extensions.c in Sources */ = {isa = PBXBuildFile; fileRef = 50D479871A01835200683297 /* CMPFormatDescription+Extensions.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +66,6 @@
 		509D923618E0093D00FC9A7A /* CMBlockBuffer+CMPData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMBlockBuffer+CMPData.c"; sourceTree = "<group>"; };
 		509D923E18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMVideoFormatDescription+CMPExtradata.h"; sourceTree = "<group>"; };
 		509D923F18E0187100FC9A7A /* CMVideoFormatDescription+CMPExtradata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMVideoFormatDescription+CMPExtradata.c"; sourceTree = "<group>"; };
-		50D479871A01835200683297 /* CMPFormatDescription+Extensions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "CMPFormatDescription+Extensions.c"; sourceTree = "<group>"; };
-		50D479881A01835200683297 /* CMPFormatDescription+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPFormatDescription+Extensions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +152,6 @@
 		509D924318E01B0700FC9A7A /* CMFormatDescription */ = {
 			isa = PBXGroup;
 			children = (
-				50D479881A01835200683297 /* CMPFormatDescription+Extensions.h */,
-				50D479871A01835200683297 /* CMPFormatDescription+Extensions.c */,
 				502F9B5D1899233E00A762A1 /* CMPFormatDescription+Text.h */,
 				502F9B5E1899233E00A762A1 /* CMPFormatDescription+Text.c */,
 			);
@@ -297,7 +292,6 @@
 				5060F4B3188DAE0F00621460 /* CMPSampleBuffer+Text.c in Sources */,
 				5060B6DE189011BD00979779 /* CMPAtoms.c in Sources */,
 				5060B6E11890152900979779 /* CMPSampleBuffer+Image.c in Sources */,
-				50D479891A01835200683297 /* CMPFormatDescription+Extensions.c in Sources */,
 				509D923118DFF79B00FC9A7A /* CMSampleBuffer+CMPDependsOnOthers.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
