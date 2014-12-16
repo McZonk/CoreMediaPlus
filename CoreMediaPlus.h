@@ -8,7 +8,6 @@
 #import <CoreMediaPlus/CMPBlockBuffer+Image.h>
 #import <CoreMediaPlus/CMPBlockBuffer+Text.h>
 
-#include "CMPFormatDescription+Extensions.h"
 #import <CoreMediaPlus/CMPFormatDescription+Text.h>
 
 #import <CoreMediaPlus/CMPSampleBuffer+Text.h>
