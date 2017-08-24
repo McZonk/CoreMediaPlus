@@ -23,7 +23,10 @@ OSStatus CMPSampleBufferCreateWithText(CFAllocatorRef allocator, CFStringRef tex
 	
 	size_t blockBufferLength = CMBlockBufferGetDataLength(blockBuffer);
 	
-	return CMSampleBufferCreate(allocator, blockBuffer, dataReady, makeDataReadyCallback, makeDataReadyRefcon, formatDescription, 1, 1, sampleTiming, 1, &blockBufferLength, outSampleBuffer);
+	status = CMSampleBufferCreate(allocator, blockBuffer, dataReady, makeDataReadyCallback, makeDataReadyRefcon, formatDescription, 1, 1, sampleTiming, 1, &blockBufferLength, outSampleBuffer );
+
+	CFRelease( blockBuffer );
+	return status;
 }
 
 CFStringRef CMPSampleBufferCopyText(CFAllocatorRef allocator, CMSampleBufferRef sampleBuffer)
