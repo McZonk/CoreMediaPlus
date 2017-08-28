@@ -7,85 +7,59 @@
 #include "CMPErrors.h"
 
 
-OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer) {
-	CFIndex textLengthUTF16 = CFStringGetLength(text);
-	if(textLengthUTF16 > USHRT_MAX)
+typedef struct TextEncodingModifierBox
+{
+	uint32_t	size;
+	OSType		type;
+	uint32_t	encoding;
+} TextEncodingModifierBox;
+
+OSStatus CMPBlockBufferCreateWithText(CFAllocatorRef allocator, CFStringRef text, CMBlockBufferRef* outBlockBuffer)
+{
+	CFDataRef utfData = CFStringCreateExternalRepresentation( NULL, text, kCFStringEncodingUTF8, '?' );
+	if (utfData == NULL)	// should not happen
 	{
-		// text is too long in utf16
 		return CMPParameterError;
 	}
-
-	const char *textCharacters = CFStringGetCStringPtr(text, kCFStringEncodingUTF8);
-	Boolean textCharactersNeedsFree = false;
-	CFIndex textLengthUTF8 = textLengthUTF16;
-	
-	if(textCharacters == NULL)
+	CFIndex textLengthUTF8 = CFDataGetLength( utfData );
+	if (textLengthUTF8 > USHRT_MAX)
 	{
-		// if there are umlauts or other special characters CFStringGetCStringPtr returns NULL
-		
-		CFRange range = CFRangeMake(0, textLengthUTF16);
-		
-		CFIndex length = CFStringGetBytes(text, range, kCFStringEncodingUTF8, 0, false, NULL, 0, &textLengthUTF8);
-		if(length != textLengthUTF16)
-		{
-			// unable to encode the string
-			return CMPParameterError;
-		}
-		
-		if(textLengthUTF8 > USHRT_MAX)
-		{
-			// text is too long in utf8
-			return CMPParameterError;
-		}
-		
-		// allocate one byte more than needed to append \0 for debugging
-		textCharacters = calloc(textLengthUTF8 + 1, 1);
-		textCharactersNeedsFree = true;
-
-		length = CFStringGetBytes(text, CFRangeMake(0, textLengthUTF16), kCFStringEncodingUTF8, 0, false, (UInt8 *)textCharacters, textLengthUTF8 + 1, &textLengthUTF8);
-		if(length != textLengthUTF16)
-		{
-			// unable to encode the string, this should never happen
-			free((void *)textCharacters);
-			return CMPParameterError;
-		}
+		// Text is too long to record the length in a uint16_t
+		CFRelease( utfData );
+		return CMPParameterError;
 	}
+	const uint8_t* textData = CFDataGetBytePtr( utfData );
 	
-	size_t bufferLength = 2 + textLengthUTF8;
+	size_t bufferLength = sizeof(uint16_t) + textLengthUTF8 + sizeof(TextEncodingModifierBox);
 	
 	OSStatus status = CMBlockBufferCreateWithMemoryBlock(allocator, NULL, bufferLength, allocator, NULL, 0, bufferLength, kCMBlockBufferAssureMemoryNowFlag, outBlockBuffer);
-	if(status != noErr)
+	if (status != noErr)
 	{
-		if(textCharactersNeedsFree)
-		{
-			free((void *)textCharacters);
-		}
+		CFRelease( utfData );
 		return status;
 	}
 	
 	char *buffer = NULL;
 	status = CMBlockBufferGetDataPointer(*outBlockBuffer, 0, NULL, NULL, &buffer);
-	if(status != noErr)
+	if (status != noErr)
 	{
-		if(textCharactersNeedsFree)
-		{
-			free((void *)textCharacters);
-		}
+		CFRelease( utfData );
 		return status;
 	}
 	
-	*(uint16_t *)buffer = OSSwapHostToBigInt16(textLengthUTF8);
+	*(uint16_t *)buffer = CFSwapInt16HostToBig(textLengthUTF8);
 	buffer += sizeof(uint16_t);
 	
-	memcpy(buffer, textCharacters, textLengthUTF8);
+	memcpy(buffer, textData, textLengthUTF8);
 	buffer += textLengthUTF8;
+	CFRelease( utfData );
 	
-	// TODO: write an explicit encoding atom here?
-	
-	if(textCharactersNeedsFree)
-	{
-		free((void *)textCharacters);
-	}
+	// write an explicit encoding atom here!
+	TextEncodingModifierBox encodingBox;
+	encodingBox.size = CFSwapInt32HostToBig( sizeof(TextEncodingModifierBox) );
+	encodingBox.type = CFSwapInt32HostToBig('encd');
+	encodingBox.encoding = CFSwapInt32HostToBig(kCFStringEncodingUTF8);
+	memcpy( buffer, &encodingBox, sizeof(encodingBox) );
 	
 	return noErr;
 }
